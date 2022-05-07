@@ -2,9 +2,11 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+
 <head>
   <jsp:include page="includes/head.html"></jsp:include>
 </head>
+
 <body>
 
   <h1>Online SQL App</h1>
