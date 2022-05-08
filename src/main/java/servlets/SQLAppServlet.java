@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -38,6 +39,9 @@ public class SQLAppServlet extends HttpServlet {
 			Connection connection = DriverManager.getConnection(dbUrl, user, password);
 			
 			sqlResult = "Conectado ao banco de dados com sucesso.";
+			
+			Statement statement = connection.createStatement();
+			sqlStatement = sqlStatement.trim();
 			
 		} catch (ClassNotFoundException classNotFound) {
 			
