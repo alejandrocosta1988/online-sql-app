@@ -9,4 +9,14 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>SQLAppServlet</display-name>
+    <servlet-name>SQLAppServlet</servlet-name>
+    <servlet-class>servlets.SQLAppServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SQLAppServlet</servlet-name>
+    <url-pattern>/SQLApp</url-pattern>
+  </servlet-mapping>
 </web-app>

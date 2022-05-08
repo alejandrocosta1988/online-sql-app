@@ -13,13 +13,13 @@
   <p>Digite uma declaração SQL e pressione executar. A declaração será executada em um banco de dados MySQL.</p>
   
   <p><b>Declaração SQL:</b></p>
-  <form>
-    <textarea rows="5" cols="100" placeholder="Digite aqui sua declaração em SQL."></textarea>
+  <form action="SQLApp" method="post">
+    <textarea name="sql-statement" rows="5" cols="100" placeholder="Digite aqui sua declaração em SQL."></textarea>
     <input type="submit" value="Executar">
   </form>
   
   <p><b>Resultado:</b></p>
-  <p>Resultado será exibido aqui</p>
+  <p>${sqlResult}</p>
   
   <hr>
 
