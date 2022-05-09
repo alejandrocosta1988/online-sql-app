@@ -2,7 +2,7 @@ package servlets;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -12,6 +12,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import util.SQLUtil;
 
 public class SQLAppServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -40,6 +41,17 @@ public class SQLAppServlet extends HttpServlet {
 			
 			Statement statement = connection.createStatement();
 			sqlStatement = sqlStatement.trim();
+			
+			if (sqlStatement.length() >= 6) {
+				
+				String sqlType = sqlStatement.substring(0, 6);
+				if (sqlType.equalsIgnoreCase("select")) {
+					ResultSet resultSet = statement.executeQuery(sqlStatement);
+					sqlResult = SQLUtil.getHtmlTable(resultSet);
+					resultSet.close();
+				}
+				
+			}
 			
 		} catch (SQLException sqlException) {
 			
