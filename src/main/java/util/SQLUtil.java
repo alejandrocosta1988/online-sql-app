@@ -15,7 +15,7 @@ public class SQLUtil {
 		htmlTable.append("<table>");
 		
 		htmlTable.append("<thead>");
-		for (int i = 0; i < columnCount; i++ ) {
+		for (int i = 1; i <= columnCount; i++ ) {
 			htmlTable.append("<th>");
 			htmlTable.append(metaData.getColumnName(i));
 			htmlTable.append("</th>");
@@ -25,7 +25,7 @@ public class SQLUtil {
 		htmlTable.append("<tbody>");
 		while (results.next()) {
 			htmlTable.append("<tr>");
-			for (int i = 0; i < columnCount; i++) {
+			for (int i = 1; i <= columnCount; i++) {
 				htmlTable.append("<td>");
 				htmlTable.append(results.getString(i));
 				htmlTable.append("</td>");
