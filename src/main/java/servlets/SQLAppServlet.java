@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import connection.DatabaseConnection;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -31,24 +32,16 @@ public class SQLAppServlet extends HttpServlet {
 		
 		try {
 
-			String dbUrl = "jdbc:mysql://localhost:3306/OnlineSQL";
-			String user = "root";
-			String password = "";
+			Connection connection = DatabaseConnection.getConnection();
 			
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection connection = DriverManager.getConnection(dbUrl, user, password);
-			
-			sqlResult = "Conectado ao banco de dados com sucesso.";
+			if (connection != null) {
+				sqlResult = "Conectado ao banco de dados com sucesso.";
+			}
 			
 			Statement statement = connection.createStatement();
 			sqlStatement = sqlStatement.trim();
 			
-		} catch (ClassNotFoundException classNotFound) {
-			
-			sqlResult = "<p>Erro ao tentar se conectar ao banco de dados. <br>" + classNotFound.getMessage() + "</p>";
-			classNotFound.printStackTrace();
-			
-		}	catch (SQLException sqlException) {
+		} catch (SQLException sqlException) {
 			
 			sqlResult = "<p>Erro ao executar a declaração SQL: <br>" + sqlException.getMessage() + "</p>";
 			
