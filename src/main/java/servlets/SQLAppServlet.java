@@ -49,9 +49,19 @@ public class SQLAppServlet extends HttpServlet {
 					ResultSet resultSet = statement.executeQuery(sqlStatement);
 					sqlResult = SQLUtil.getHtmlTable(resultSet);
 					resultSet.close();
+				} else {
+					int i = statement.executeUpdate(sqlStatement);
+					if (i == 0) { //declaração DDL
+						sqlResult = "<p>Declaração executada com sucesso.</p>";
+					} else { //declaração INSERT, UPDATE ou DELETE
+						sqlResult = "<p>Declaração executada com sucesso.<br>" +
+					i + " linha(as) afetada(as).</p>";
+					}
 				}
 				
 			}
+			
+			statement.close();
 			
 		} catch (SQLException sqlException) {
 			

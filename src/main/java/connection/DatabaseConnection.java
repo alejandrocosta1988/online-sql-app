@@ -36,7 +36,7 @@ public class DatabaseConnection implements Serializable {
 				
 				Class.forName("com.mysql.cj.jdbc.Driver");
 				connection = DriverManager.getConnection(dbUrl, user, password);
-				connection.setAutoCommit(false);
+				//connection.setAutoCommit(false);
 				
 			}
 			
