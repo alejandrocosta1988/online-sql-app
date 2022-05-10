@@ -10,6 +10,7 @@ Praticar conhecimentos relacionados com JDBC. Apesar de que JDBC não é utiliza
 
 Com o desenvolvimento do projeto foi possível colocar em prática conhecimentos associados ao desenvolvimento web com JavaServer Pages (JSP) e Servlets. Alguns pontos que foram colocados em prática:
 
+- Utilização de tags JSTL;
 - Conexão com banco de dados MySQL, utilizando Connector/J;
 - Linguagem de definição de bancos de dados (DDL);
 - Linguagem de manipulação de bancos de dados (DML);
