@@ -10,12 +10,14 @@ Praticar conhecimentos relacionados com JDBC. Apesar de que JDBC não é utiliza
 
 Com o desenvolvimento do projeto foi possível colocar em prática conhecimentos associados ao desenvolvimento web com JavaServer Pages (JSP) e Servlets. Alguns pontos que foram colocados em prática:
 
-- Conexão com banco de dados MySQL;
+- Conexão com banco de dados MySQL, utilizando Connector/J;
 - Linguagem de definição de bancos de dados (DDL);
-- Linguage de manipulação de bancos de dados (DML);
+- Linguagem de manipulação de bancos de dados (DML);
 - Desenvolvimento de páginas JSPs;
 - Desenvolvimentos de Servlets;
 - Arquitetura MVC;
 - Desenvolvimento de backend com Java;
 - Orientação à objetos;
 - Testes unitários com JUnit.
+
+Como o intesse atual está em desenvolvimento backend, o frontend da aplicação está bem simples, utilizando apenas HTML. Posteriormente, o frontend será aprimorado. Apesar de simples, o frontend apresenta responsividade básica.
